@@ -2,12 +2,12 @@
 #      Main Configs       #
 # ----------------------- #
 
-url: http://yoursite.com
-title: My Octopress Blog
-subtitle: A blogging framework for hackers.
-author: Your Name
-simple_search: https://www.google.com/search
-description:
+url: http://blog.weblinuxgame.com
+title: Flyer wither away
+subtitle: 飞鸟尽,良弓藏
+author: weblinuxgame
+simple_search: https://www.baidu.com
+description: 修仙不得,修代码,一修代码,夜夜码
 
 # Default date format is "ordinal" (resulting in "July 22nd 2007")
 # You can customize the format as defined in
@@ -95,7 +95,10 @@ disqus_short_name:
 disqus_show_comment_count: false
 
 # Google Analytics
-google_analytics_tracking_id:
+google_analytics_tracking_id: false
 
 # Facebook Like
 facebook_like: false
+
+# Twitter_tweet
+twitter_tweet_button: false
