@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: 
 
-Sitemap: http://blog.weblinuxgame.com/sitemap.xml 
+Sitemap: http://webgamelinux.github.io/sitemap.xml 

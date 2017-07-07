@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Flyer wither away]]></title>
-  <link href="http://blog.weblinuxgame.com/atom.xml" rel="self"/>
-  <link href="http://blog.weblinuxgame.com/"/>
-  <updated>2017-07-06T18:33:10+08:00</updated>
-  <id>http://blog.weblinuxgame.com/</id>
+  <link href="http://webgamelinux.github.io/atom.xml" rel="self"/>
+  <link href="http://webgamelinux.github.io/"/>
+  <updated>2017-07-07T10:39:58+08:00</updated>
+  <id>http://webgamelinux.github.io/</id>
   <author>
     <name><![CDATA[weblinuxgame]]></name>
     
@@ -15,17 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Vm Nat Problem Resolvent]]></title>
-    <link href="http://blog.weblinuxgame.com/blog/2017/07/06/vm-nat-problem-resolvent.markdown/"/>
+    <link href="http://webgamelinux.github.io/blog/2017/07/06/vm-nat-problem-resolvent/"/>
     <updated>2017-07-06T18:30:28+08:00</updated>
-    <id>http://blog.weblinuxgame.com/blog/2017/07/06/vm-nat-problem-resolvent.markdown</id>
-    <content type="html"><![CDATA[]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Vm Nat Problem Resolvent]]></title>
-    <link href="http://blog.weblinuxgame.com/blog/2017/07/06/vm-nat-problem-resolvent/"/>
-    <updated>2017-07-06T18:30:28+08:00</updated>
-    <id>http://blog.weblinuxgame.com/blog/2017/07/06/vm-nat-problem-resolvent</id>
+    <id>http://webgamelinux.github.io/blog/2017/07/06/vm-nat-problem-resolvent</id>
     <content type="html"><![CDATA[
 ]]></content>
   </entry>

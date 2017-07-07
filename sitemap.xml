@@ -1,17 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
-<loc>http://blog.weblinuxgame.com/blog/2017/07/06/vm-nat-problem-resolvent.markdown/</loc>
+<loc>http://webgamelinux.github.io/blog/2017/07/06/vm-nat-problem-resolvent/</loc>
 <lastmod>2017-07-06T18:30:28+08:00</lastmod>
 </url>
 <url>
-<loc>http://blog.weblinuxgame.com/blog/2017/07/06/vm-nat-problem-resolvent/</loc>
-<lastmod>2017-07-06T18:30:28+08:00</lastmod>
+<loc>http://webgamelinux.github.io/blog/archives/</loc>
 </url>
 <url>
-<loc>http://blog.weblinuxgame.com/blog/archives/</loc>
-</url>
-<url>
-<loc>http://blog.weblinuxgame.com/</loc>
+<loc>http://webgamelinux.github.io/</loc>
 </url>
 </urlset>
