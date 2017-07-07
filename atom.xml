@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Flyer wither away]]></title>
+  <link href="http://blog.weblinuxgame.com/atom.xml" rel="self"/>
+  <link href="http://blog.weblinuxgame.com/"/>
+  <updated>2017-07-06T18:33:10+08:00</updated>
+  <id>http://blog.weblinuxgame.com/</id>
+  <author>
+    <name><![CDATA[weblinuxgame]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Vm Nat Problem Resolvent]]></title>
+    <link href="http://blog.weblinuxgame.com/blog/2017/07/06/vm-nat-problem-resolvent.markdown/"/>
+    <updated>2017-07-06T18:30:28+08:00</updated>
+    <id>http://blog.weblinuxgame.com/blog/2017/07/06/vm-nat-problem-resolvent.markdown</id>
+    <content type="html"><![CDATA[]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Vm Nat Problem Resolvent]]></title>
+    <link href="http://blog.weblinuxgame.com/blog/2017/07/06/vm-nat-problem-resolvent/"/>
+    <updated>2017-07-06T18:30:28+08:00</updated>
+    <id>http://blog.weblinuxgame.com/blog/2017/07/06/vm-nat-problem-resolvent</id>
+    <content type="html"><![CDATA[
+]]></content>
+  </entry>
+  
+</feed>
