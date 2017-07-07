@@ -4,15 +4,15 @@ require "stringex"
 
 ## -- Rsync Deploy config -- ##
 # Be sure your public key is listed in your server's ~/.ssh/authorized_keys file
-ssh_user       = "user@domain.com"
+ssh_user       = "git@github.com"
 ssh_port       = "22"
-document_root  = "~/website.com/"
+document_root  = "~/.ssh/"
 rsync_delete   = false
 rsync_args     = ""  # Any extra arguments to pass to rsync
-deploy_default = "rsync"
+deploy_default = "push"
 
 # This will be configured for you when you run config_deploy
-deploy_branch  = "gh-pages"
+deploy_branch  = "master"
 
 ## -- Misc Configs -- ##
 
@@ -51,7 +51,7 @@ end
 #######################
 # Working with Jekyll #
 #######################
-
+## 生成 静态博客
 desc "Generate jekyll site"
 task :generate do
   raise "### You haven't set anything up yet. First run `rake install` to set up an Octopress theme." unless File.directory?(source_dir)
@@ -75,7 +75,7 @@ task :watch do
 
   [jekyllPid, compassPid].each { |pid| Process.wait(pid) }
 end
-
+### 预览 博客 效果
 desc "preview the site in a web browser"
 task :preview do
   raise "### You haven't set anything up yet. First run `rake install` to set up an Octopress theme." unless File.directory?(source_dir)
@@ -92,7 +92,7 @@ task :preview do
 
   [jekyllPid, compassPid, rackupPid].each { |pid| Process.wait(pid) }
 end
-
+# 新建一偏 博客
 # usage rake new_post[my-new-post] or rake new_post['my new post'] or rake new_post (defaults to "new-post")
 desc "Begin a new post in #{source_dir}/#{posts_dir}"
 task :new_post, :title do |t, args|
@@ -118,7 +118,7 @@ task :new_post, :title do |t, args|
     post.puts "---"
   end
 end
-
+# 新建 一个 单页
 # usage rake new_page[my-new-page] or rake new_page[my-new-page.html] or rake new_page (defaults to "new-page.markdown")
 desc "Create a new page in #{source_dir}/(filename)/index.#{new_page_ext}"
 task :new_page, :filename do |t, args|
@@ -157,7 +157,7 @@ task :new_page, :filename do |t, args|
     puts "Syntax error: #{args.filename} contains unsupported characters"
   end
 end
-
+#
 # usage rake isolate[my-post]
 desc "Move all other posts than the one currently being worked on to a temporary stash location (stash) so regenerating the site happens much more quickly."
 task :isolate, :filename do |t, args|
@@ -172,12 +172,13 @@ desc "Move all stashed posts back into the posts directory, ready for site gener
 task :integrate do
   FileUtils.mv Dir.glob("#{source_dir}/#{stash_dir}/*.*"), "#{source_dir}/#{posts_dir}/"
 end
-
+## 清楚 缓存
 desc "Clean out caches: .pygments-cache, .gist-cache, .sass-cache"
 task :clean do
   rm_rf [Dir.glob(".pygments-cache/**"), Dir.glob(".gist-cache/**"), Dir.glob(".sass-cache/**"), "source/stylesheets/screen.css"]
 end
 
+##
 desc "Move sass to sass.old, install sass theme updates, replace sass/custom with sass.old/custom"
 task :update_style, :theme do |t, args|
   theme = args.theme || 'classic'
@@ -191,7 +192,7 @@ task :update_style, :theme do |t, args|
   cp_r "sass.old/custom/.", "sass/custom/", :remove_destination=>true
   puts "## Updated Sass ##"
 end
-
+## 更新 资源
 desc "Move source to source.old, install source theme updates, replace source/_includes/navigation.html with source.old's navigation"
 task :update_source, :theme do |t, args|
   theme = args.theme || 'classic'
@@ -213,7 +214,7 @@ end
 ##############
 # Deploying  #
 ##############
-
+### 发布
 desc "Default deploy task"
 task :deploy do
   # Check if preview posts exist, which should not be published
@@ -230,7 +231,7 @@ end
 desc "Generate website and deploy"
 task :gen_deploy => [:integrate, :generate, :deploy] do
 end
-
+## 拷贝
 desc "copy dot files for deployment"
 task :copydot, :source, :dest do |t, args|
   FileList["#{args.source}/**/.*"].exclude("**/.", "**/..", "**/.DS_Store", "**/._*").each do |file|
@@ -241,6 +242,7 @@ end
 desc "Deploy website via rsync"
 task :rsync do
   exclude = ""
+  #system "git pull"
   if File.exists?('./rsync-exclude')
     exclude = "--exclude-from '#{File.expand_path('./rsync-exclude')}'"
   end
@@ -252,7 +254,7 @@ desc "deploy public directory to github pages"
 multitask :push do
   puts "## Deploying branch to Github Pages "
   puts "## Pulling any updates from Github Pages "
-  cd "#{deploy_dir}" do 
+  cd "#{deploy_dir}" do
     Bundler.with_clean_env { system "git pull" }
   end
   (Dir["#{deploy_dir}/*"]).each { |f| rm_rf(f) }
@@ -260,6 +262,7 @@ multitask :push do
   puts "\n## Copying #{public_dir} to #{deploy_dir}"
   cp_r "#{public_dir}/.", deploy_dir
   cd "#{deploy_dir}" do
+    system "git pull origin #{deploy_branch}" # hewei
     system "git add -A"
     message = "Site updated at #{Time.now.utc}"
     puts "\n## Committing: #{message}"
@@ -304,7 +307,7 @@ task :set_root_dir, :dir do |t, args|
     puts "## Site's root directory is now '/#{dir.sub(/^\//, '')}' ##"
   end
 end
-
+## 设置 github 仓库
 desc "Set up _deploy folder and deploy branch for Github Pages deployment"
 task :setup_github_pages, :repo do |t, args|
   if args.repo
@@ -314,10 +317,12 @@ task :setup_github_pages, :repo do |t, args|
     puts "(For example, 'git@github.com:your_username/your_username.github.io.git)"
     puts "           or 'https://github.com/your_username/your_username.github.io')"
     repo_url = get_stdin("Repository url: ")
+    ## 接收出现字符集问题 请手动输入 | 修改终端 默认字符集
   end
-  protocol = (repo_url.match(/(^git)@/).nil?) ? 'https' : 'git'
+  #hewei
+  protocol = (repo_url.match(/((^git)@)|(\.git$)/).nil?) ? 'https' : 'git'
   if protocol == 'git'
-    user = repo_url.match(/:([^\/]+)/)[1]
+    user = repo_url.match(/:([^\/]+)/)[1] || "webgamelinux"
   else
     user = repo_url.match(/github\.com\/([^\/]+)/)[1]
   end
@@ -329,6 +334,7 @@ task :setup_github_pages, :repo do |t, args|
     if branch == 'master'
       # If this is a user/organization pages repository, add the correct origin remote
       # and checkout the source branch for committing changes to the blog source.
+      system "git remote --delete origin" # hewei
       system "git remote add origin #{repo_url}"
       puts "Added remote #{repo_url} as origin"
       system "git config branch.master.remote origin"
