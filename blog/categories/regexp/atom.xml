@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Regexp | Flyer wither away]]></title>
   <link href="http://webgamelinux.github.io/blog/categories/regexp/atom.xml" rel="self"/>
   <link href="http://webgamelinux.github.io/"/>
-  <updated>2017-07-10T17:18:54+08:00</updated>
+  <updated>2017-07-10T18:41:05+08:00</updated>
   <id>http://webgamelinux.github.io/</id>
   <author>
     <name><![CDATA[weblinuxgame]]></name>
@@ -41,7 +41,10 @@
 
 <p>&ensp;iii. sed 支持 <strong>正则 处理 </strong></p>
 
-<blockquote><p>sed 使用格式</p>
+<blockquote><p>sed 使用格式<br/>
+<code>bash  sed 命令格式  http://man.linuxde.net/sed  more
+$  sed &lt;opts&gt; 'deal-pattern-and-command' [file]
+</code></p>
 
 <p>sed 常用 参数 列表</p></blockquote>
 ]]></content>

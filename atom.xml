@@ -4,7 +4,7 @@
   <title><![CDATA[Flyer wither away]]></title>
   <link href="http://webgamelinux.github.io/atom.xml" rel="self"/>
   <link href="http://webgamelinux.github.io/"/>
-  <updated>2017-07-10T17:18:54+08:00</updated>
+  <updated>2017-07-10T18:41:05+08:00</updated>
   <id>http://webgamelinux.github.io/</id>
   <author>
     <name><![CDATA[weblinuxgame]]></name>
@@ -41,9 +41,14 @@
 
 <p>&ensp;iii. sed 支持 <strong>正则 处理 </strong></p>
 
-<blockquote><p>sed 使用格式</p>
+<blockquote><p>sed 使用格式</p></blockquote>
 
-<p>sed 常用 参数 列表</p></blockquote>
+<figure class='code'><figcaption><span>sed 命令格式</span><a href='http://man.linuxde.net/sed'>more</a></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span> sed &lt;opts&gt; <span class="s1">&#39;deal-pattern-and-command&#39;</span> <span class="o">[</span>file<span class="o">]</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<blockquote><p>sed 常用 参数 列表</p></blockquote>
 ]]></content>
   </entry>
   
