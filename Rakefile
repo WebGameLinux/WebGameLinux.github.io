@@ -231,6 +231,17 @@ end
 desc "Generate website and deploy"
 task :gen_deploy => [:integrate, :generate, :deploy] do
 end
+###########################
+##  deploy source code   ##
+###########################
+desc "deploy code env"
+task :pushcode do
+  #git pull source
+  system "git pull origin source"
+  system "git add -A"
+  system "git commit  -m \"#{Time.now.utc} code update\""
+  system "git push -u origin master:source"
+end
 ## 拷贝
 desc "copy dot files for deployment"
 task :copydot, :source, :dest do |t, args|
