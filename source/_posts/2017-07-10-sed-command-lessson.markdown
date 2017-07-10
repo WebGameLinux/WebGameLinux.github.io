@@ -20,7 +20,9 @@ categories: [linux,regexp,pattern]
 &ensp;iii. sed 支持 **正则 处理 **  
 
 
-> sed 使用格式
-
+> sed 使用格式  
+```bash  sed 命令格式  http://man.linuxde.net/sed  more
+$  sed <opts> 'deal-pattern-and-command' [file]
+```
 
 > sed 常用 参数 列表  
