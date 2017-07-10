@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Flyer wither away]]></title>
-  <link href="http://webgamelinux.github.io/atom.xml" rel="self"/>
+  <title><![CDATA[Category: Linux | Flyer wither away]]></title>
+  <link href="http://webgamelinux.github.io/blog/categories/linux/atom.xml" rel="self"/>
   <link href="http://webgamelinux.github.io/"/>
   <updated>2017-07-10T17:09:48+08:00</updated>
   <id>http://webgamelinux.github.io/</id>
@@ -44,15 +44,6 @@
 <blockquote><p>sed 使用格式</p>
 
 <p>sed 常用 参数 列表</p></blockquote>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[虚拟机 Nat 联网异常]]></title>
-    <link href="http://webgamelinux.github.io/blog/2017/07/06/vm-nat-problem-resolvent/"/>
-    <updated>2017-07-06T18:30:28+08:00</updated>
-    <id>http://webgamelinux.github.io/blog/2017/07/06/vm-nat-problem-resolvent</id>
-    <content type="html"><![CDATA[
 ]]></content>
   </entry>
   
