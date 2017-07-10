@@ -26,6 +26,8 @@ themes_dir      = ".themes"   # directory for blog files
 new_post_ext    = "markdown"  # default new post file extension when using the new_post task
 new_page_ext    = "markdown"  # default new page file extension when using the new_page task
 server_port     = "4000"      # port for preview server eg. localhost:4000
+### hewei config
+code_branch      = "source"
 
 if (/cygwin|mswin|mingw|bccwin|wince|emx/ =~ RUBY_PLATFORM) != nil
   puts '## Set the codepage to 65001 for Windows machines'
@@ -237,9 +239,15 @@ end
 desc "deploy code env"
 task :pushcode do
   #git pull source
-  system "git pull origin source"
+  ret = `git pull origin #{code_branch}`
+  msg = "#{Time.now.utc} code update"
+  ret = (ret.match(/(Couldn't find remote ref)/).nil?)? 0 : 1
+  if ret == 1
+  	msg = "soucre branch init at "+" #{Time.now.utc}"
+  end
+ # puts "#{ret}" # debug
   system "git add -A"
-  system "git commit  -m \"#{Time.now.utc} code update\""
+  system "git commit  -m  \" #{msg} \" "
   system "git push -u origin master:source"
 end
 ## 拷贝
