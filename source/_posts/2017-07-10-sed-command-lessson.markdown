@@ -1,6 +1,7 @@
 ---
 layout: post
-title: "sed command lessson"
+title: "sed 命令 来一行 "
+en_title: "sed command lessson"
 date: 2017-07-10 15:40:02 +0800
 comments: true
 categories: [linux,regexp,pattern]
